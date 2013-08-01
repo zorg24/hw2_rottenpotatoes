@@ -3256,3 +3256,1135 @@ Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-01 13:00:03 -0500
 Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/movies?sort=release_date" for 127.0.0.1 at 2013-08-01 13:19:49 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"release_date"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Rendered movies/index.html.haml within layouts/application (12.1ms)
+Completed 500 Internal Server Error in 144ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+    2: %h1 All Movies
+    3: = form_tag movies_path, :method => :get do
+    4:   Include: 
+    5:   - @all_ratings.each do |rating|
+    6:     = rating
+    7:     = check_box_tag "ratings[#{rating}]"
+    8:   = submit_tag 'Refresh'
+  app/views/movies/index.html.haml:5:in `block in _app_views_movies_index_html_haml___832622614__645090448'
+  app/views/movies/index.html.haml:3:in `_app_views_movies_index_html_haml___832622614__645090448'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.7ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 13:20:13 -0500
+  Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+Rendered movies/index.html.haml within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 15ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+    2: %h1 All Movies
+    3: = form_tag movies_path, :method => :get do
+    4:   Include: 
+    5:   - @all_ratings.each do |rating|
+    6:     = rating
+    7:     = check_box_tag "ratings[#{rating}]"
+    8:   = submit_tag 'Refresh'
+  app/views/movies/index.html.haml:5:in `block in _app_views_movies_index_html_haml___832622614__645090448'
+  app/views/movies/index.html.haml:3:in `_app_views_movies_index_html_haml___832622614__645090448'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 13:39:26 -0500
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Rendered movies/index.html.haml within layouts/application (24.6ms)
+Completed 500 Internal Server Error in 43ms
+
+ActionView::Template::Error (undefined method `ratings' for #<Class:0xb3506b40>):
+    2: %h1 All Movies
+    3: = form_tag movies_path, :method => :get, :id => :ratings_form do
+    4:   Include: 
+    5:   - @all_ratings = Movie.ratings  
+    6:   - @all_ratings.each do |rating|
+    7:     = rating
+    8:     = check_box_tag "ratings[#{rating}]"
+  app/views/movies/index.html.haml:5:in `block in _app_views_movies_index_html_haml___832622614__640474548'
+  app/views/movies/index.html.haml:3:in `_app_views_movies_index_html_haml___832622614__640474548'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 14:03:16 -0500
+  Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `keys' for nil:NilClass):
+  app/controllers/movies_controller.rb:11:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.4ms)
+
+
+Started GET "/movies?PG=1" for 127.0.0.1 at 2013-08-01 14:03:44 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"PG"=>"1"}
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `keys' for nil:NilClass):
+  app/controllers/movies_controller.rb:11:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.3ms)
+
+
+Started GET "/movies?G=1&PG=1&PG-13=1&R=1" for 127.0.0.1 at 2013-08-01 14:04:38 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `keys' for nil:NilClass):
+  app/controllers/movies_controller.rb:11:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:11:26 -0500
+
+SyntaxError (/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:11: syntax error, unexpected tSYMBEG, expecting ')'
+...ms.key? :sort && session.key? :sort) || (!params.key? :ratin...
+...                               ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:11: syntax error, unexpected tSYMBEG, expecting ')'
+....key? :rating && session.key? :rating) do
+...                               ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:11: syntax error, unexpected keyword_do, expecting keyword_then or ';' or '\n'
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:13: syntax error, unexpected tSYMBEG, expecting keyword_end
+...'index', :sort => params.key? :sort ? params[:sort] : sessio...
+...                               ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:13: syntax error, unexpected ',', expecting keyword_end
+...params[:sort] : session[:sort], :rating => params.key? :rati...
+...                               ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:17: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:sort] => params.key? :sort ? params[:...
+                     ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:18: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:rating] => params.key? :rating ? params...
+                       ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:29: syntax error, unexpected keyword_do_block, expecting keyword_then or ';' or '\n'):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (24.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (50.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:13:50 -0500
+
+SyntaxError (/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:11: syntax error, unexpected tSYMBEG, expecting ')'
+...ms.key? :sort && session.key? :sort ) || (!params.key? :rati...
+...                               ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:11: syntax error, unexpected tSYMBEG, expecting ')'
+....key? :rating && session.key? :rating) do
+...                               ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:11: syntax error, unexpected keyword_do, expecting keyword_then or ';' or '\n'
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:13: syntax error, unexpected tSYMBEG, expecting keyword_end
+...'index', :sort => params.key? :sort ? params[:sort] : sessio...
+...                               ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:13: syntax error, unexpected ',', expecting keyword_end
+...params[:sort] : session[:sort], :rating => params.key? :rati...
+...                               ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:17: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:sort] => params.key? :sort ? params[:...
+                     ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:18: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:rating] => params.key? :rating ? params...
+                       ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:29: syntax error, unexpected keyword_do_block, expecting keyword_then or ';' or '\n'):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.3ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:14:27 -0500
+
+SyntaxError (/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:11: syntax error, unexpected keyword_do, expecting keyword_then or ';' or '\n'
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:13: syntax error, unexpected tSYMBEG, expecting keyword_end
+...'index', :sort => params.key? :sort ? params[:sort] : sessio...
+...                               ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:13: syntax error, unexpected ',', expecting keyword_end
+...params[:sort] : session[:sort], :rating => params.key? :rati...
+...                               ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:17: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:sort] => params.key? :sort ? params[:...
+                     ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:18: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:rating] => params.key? :rating ? params...
+                       ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:29: syntax error, unexpected keyword_do_block, expecting keyword_then or ';' or '\n'):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.3ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:17:57 -0500
+
+SyntaxError (/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:13: syntax error, unexpected tSYMBEG, expecting keyword_end
+...'index', :sort => params.key? :sort ? params[:sort] : sessio...
+...                               ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:13: syntax error, unexpected ',', expecting keyword_end
+...params[:sort] : session[:sort], :rating => params.key? :rati...
+...                               ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:17: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:sort] => params.key? :sort ? params[:...
+                     ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:18: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:rating] => params.key? :rating ? params...
+                       ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:68: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.5ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.9ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:18:53 -0500
+
+SyntaxError (/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:17: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:sort] => params.key? :sort ? params[:...
+                     ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:18: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:rating] => params.key? :rating ? params...
+                       ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:68: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (63.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:19:17 -0500
+
+SyntaxError (/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:17: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:sort] => params.key? :sort ? params[:...
+                     ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:18: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:rating] => params.key? :rating ? params...
+                       ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:68: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:19:19 -0500
+
+SyntaxError (/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:17: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:sort] => params.key? :sort ? params[:...
+                     ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:18: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:rating] => params.key? :rating ? params...
+                       ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:68: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:22:48 -0500
+
+SyntaxError (/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:17: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:sort] => params.key? :sort ? params[:...
+                     ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:18: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:rating] => params.key? :rating ? params...
+                       ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:68: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:22:59 -0500
+
+SyntaxError (/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:17: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:sort] => params.key?(:sort) ? params[...
+                     ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:18: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:rating] => params.key?(:rating) ? param...
+                       ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:68: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:27:56 -0500
+
+SyntaxError (/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:17: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:sort] => params[:sort] ? params[:sort] : session[:sort]
+                     ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:18: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:rating] => params[:rating] ? params[:ra...
+                       ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:68: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (44.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (65.3ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:28:28 -0500
+
+SyntaxError (/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:17: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:sort] => params[:sort] ? params[:sort] : session[:sort]
+                     ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:18: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:rating] => params[:rating] ? params[:ra...
+                       ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:68: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:28:31 -0500
+
+SyntaxError (/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:17: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:sort] => params[:sort] ? params[:sort] : session[:sort]
+                     ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:18: syntax error, unexpected tASSOC, expecting keyword_end
+    session[:rating] => params[:rating] ? params[:ra...
+                       ^
+/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:68: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:28:37 -0500
+
+SyntaxError (/home/ubuntu/hw2_rottenpotatoes/app/controllers/movies_controller.rb:68: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:29:09 -0500
+
+SyntaxError (/home/ubuntu/hw2_rottenpotatoes/app/models/movie.rb:12: syntax error, unexpected $end, expecting keyword_end):
+  app/controllers/movies_controller.rb:1:in `<top (required)>'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:28 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (12.8ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 49ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:30 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:30 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:30 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 9ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:30 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:30 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:30 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:30 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:30 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:31 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 10ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:31 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:31 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:31 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:31 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:31 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:32 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:32 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:32 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (1.0ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:32 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:32 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (1.1ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 7ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:32 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:38 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:38 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:38 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:38 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:38 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:38 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 7ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:39 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.8ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 9ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:39 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:39 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 7ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:39 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:39 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 7ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:39 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:40 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:40 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:40 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 65ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:40 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:40 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 7ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:41 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:41 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:41 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 8ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:41 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:43 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:44 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:44 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 8ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:44 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:44 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.8ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:44 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 7ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:44 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 8ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:44 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.8ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 15ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:45 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:45 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:45 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:45 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.8ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 7ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:45 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 8ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:46 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 8ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:46 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (1.6ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 8ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:46 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:46 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:46 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 7ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:46 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:47 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 106ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:47 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:51 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:51 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 9ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:51 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:52 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:52 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.6ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 16ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:52 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:52 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 7ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:53 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 7ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:53 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:53 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 15ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:54 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:54 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:54 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:54 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 10ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:55 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 6ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:55 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 8ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:55 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:56 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 5ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:56 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 7ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:56 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 302 Found in 7ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:30:57 -0500
+  Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 302 Found in 8ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:33:14 -0500
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Rendered movies/index.html.haml within layouts/application (141.2ms)
+Completed 500 Internal Server Error in 249ms
+
+ActionView::Template::Error (undefined method `ratings' for #<Class:0xb362c5b0>):
+    2: %h1 All Movies
+    3: = form_tag movies_path, :method => :get, :id => :ratings_form do
+    4:   Include: 
+    5:   - @all_ratings = Movie.ratings  
+    6:   - @all_ratings.each do |rating|
+    7:     = rating
+    8:     = check_box_tag "ratings[#{rating}]", 1, checked = session[:rating][rating], :id => "ratings_#{rating}"  
+  app/views/movies/index.html.haml:5:in `block in _app_views_movies_index_html_haml__270122225__642992388'
+  app/views/movies/index.html.haml:3:in `_app_views_movies_index_html_haml__270122225__642992388'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:35:29 -0500
+  Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT rating FROM "movies" [0m
+Rendered movies/index.html.haml within layouts/application (18.4ms)
+Completed 500 Internal Server Error in 32ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+    5:   - @all_ratings = Movie.ratings  
+    6:   - @all_ratings.each do |rating|
+    7:     = rating
+    8:     = check_box_tag "ratings[#{rating}]", 1, checked = session[:rating][rating], :id => "ratings_#{rating}"  
+    9:   = submit_tag 'Refresh', :id => "ratings_submit    "
+    10: %table#movies
+    11:   %thead
+  app/views/movies/index.html.haml:8:in `block (2 levels) in _app_views_movies_index_html_haml__270122225__642992388'
+  app/views/movies/index.html.haml:6:in `each'
+  app/views/movies/index.html.haml:6:in `block in _app_views_movies_index_html_haml__270122225__642992388'
+  app/views/movies/index.html.haml:3:in `_app_views_movies_index_html_haml__270122225__642992388'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:36:26 -0500
+  Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT rating FROM "movies" [0m
+Rendered movies/index.html.haml within layouts/application (15.0ms)
+Completed 500 Internal Server Error in 27ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+    5:   - @all_ratings = Movie.ratings  
+    6:   - @all_ratings.each do |rating|
+    7:     = rating
+    8:     = check_box_tag "ratings[#{rating}]", 1, checked = session[:rating][rating], :id => "ratings_#{rating}"  
+    9:   = submit_tag 'Refresh', :id => "ratings_submit    "
+    10: %table#movies
+    11:   %thead
+  app/views/movies/index.html.haml:8:in `block (2 levels) in _app_views_movies_index_html_haml__270122225__642992388'
+  app/views/movies/index.html.haml:6:in `each'
+  app/views/movies/index.html.haml:6:in `block in _app_views_movies_index_html_haml__270122225__642992388'
+  app/views/movies/index.html.haml:3:in `_app_views_movies_index_html_haml__270122225__642992388'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:38:20 -0500
+  Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT rating FROM "movies" [0m
+Rendered movies/index.html.haml within layouts/application (15.4ms)
+Completed 500 Internal Server Error in 31ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+    5:   - @all_ratings = Movie.ratings  
+    6:   - @all_ratings.each do |rating|
+    7:     = rating
+    8:     = check_box_tag "ratings[#{rating}]", 1, checked = session[:rating][rating], :id => "ratings_#{rating}"  
+    9:   = submit_tag 'Refresh', :id => "ratings_submit    "
+    10: %table#movies
+    11:   %thead
+  app/views/movies/index.html.haml:8:in `block (2 levels) in _app_views_movies_index_html_haml__270122225__642992388'
+  app/views/movies/index.html.haml:6:in `each'
+  app/views/movies/index.html.haml:6:in `block in _app_views_movies_index_html_haml__270122225__642992388'
+  app/views/movies/index.html.haml:3:in `_app_views_movies_index_html_haml__270122225__642992388'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:38:23 -0500
+  Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mMovie Load (1.1ms)[0m  [1mSELECT rating FROM "movies" [0m
+Rendered movies/index.html.haml within layouts/application (18.8ms)
+Completed 500 Internal Server Error in 36ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+    5:   - @all_ratings = Movie.ratings  
+    6:   - @all_ratings.each do |rating|
+    7:     = rating
+    8:     = check_box_tag "ratings[#{rating}]", 1, checked = session[:rating][rating], :id => "ratings_#{rating}"  
+    9:   = submit_tag 'Refresh', :id => "ratings_submit    "
+    10: %table#movies
+    11:   %thead
+  app/views/movies/index.html.haml:8:in `block (2 levels) in _app_views_movies_index_html_haml__270122225__642992388'
+  app/views/movies/index.html.haml:6:in `each'
+  app/views/movies/index.html.haml:6:in `block in _app_views_movies_index_html_haml__270122225__642992388'
+  app/views/movies/index.html.haml:3:in `_app_views_movies_index_html_haml__270122225__642992388'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (75.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:38:25 -0500
+  Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT rating FROM "movies" [0m
+Rendered movies/index.html.haml within layouts/application (17.2ms)
+Completed 500 Internal Server Error in 30ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+    5:   - @all_ratings = Movie.ratings  
+    6:   - @all_ratings.each do |rating|
+    7:     = rating
+    8:     = check_box_tag "ratings[#{rating}]", 1, checked = session[:rating][rating], :id => "ratings_#{rating}"  
+    9:   = submit_tag 'Refresh', :id => "ratings_submit    "
+    10: %table#movies
+    11:   %thead
+  app/views/movies/index.html.haml:8:in `block (2 levels) in _app_views_movies_index_html_haml__270122225__642992388'
+  app/views/movies/index.html.haml:6:in `each'
+  app/views/movies/index.html.haml:6:in `block in _app_views_movies_index_html_haml__270122225__642992388'
+  app/views/movies/index.html.haml:3:in `_app_views_movies_index_html_haml__270122225__642992388'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.7ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:38:27 -0500
+  Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT rating FROM "movies" [0m
+Rendered movies/index.html.haml within layouts/application (14.7ms)
+Completed 500 Internal Server Error in 27ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+    5:   - @all_ratings = Movie.ratings  
+    6:   - @all_ratings.each do |rating|
+    7:     = rating
+    8:     = check_box_tag "ratings[#{rating}]", 1, checked = session[:rating][rating], :id => "ratings_#{rating}"  
+    9:   = submit_tag 'Refresh', :id => "ratings_submit    "
+    10: %table#movies
+    11:   %thead
+  app/views/movies/index.html.haml:8:in `block (2 levels) in _app_views_movies_index_html_haml__270122225__642992388'
+  app/views/movies/index.html.haml:6:in `each'
+  app/views/movies/index.html.haml:6:in `block in _app_views_movies_index_html_haml__270122225__642992388'
+  app/views/movies/index.html.haml:3:in `_app_views_movies_index_html_haml__270122225__642992388'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.5ms)

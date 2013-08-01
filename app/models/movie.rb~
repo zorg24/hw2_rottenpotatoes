@@ -5,7 +5,6 @@ class Movie < ActiveRecord::Base
 
   def self.query(ratings)
     rati = ratings
-    rati.compact!
     ret = ""
     rati.each{ |s| ret += "rating '" + s[0] + "' or" }
     ret.chomp!(" or ")

@@ -5,13 +5,36 @@ class MoviesController < ApplicationController
     @movie = Movie.find(id) # look up movie by unique ID
     # will render app/views/movies/show.<extension> by default
   end
-
+  
   def index
-    @movies = Movie.all
-    @movies = Movie.order(:title) if params["sort"] == "title"
-    @movies = Movie.order("release_date ASC") if params["sort"] == "release_date"
+    # redirect if needed
+    if (!params.key?(:sort) && session.key?(:sort)) || (!params.key?(:rating) && session.key?(:rating))
+      flash.keep
+      redirect_to :action => 'index', :sort => params.key?(:sort) ? params[:sort] : session[:sort], :rating => params.key?(:rating) ? params[:rating] : session[:rating]
+    end
+
+    # update session
+    session[:sort] = params.key?(:sort) ? params[:sort] : session[:sort]
+    session[:rating] = params.key?(:rating) ? params[:rating] : session[:rating]
+
+    if !session.key? :rating
+      rat = Movie.ratings
+      session[:rating] = {}
+      rat.each { |s| session[:rating][s] = 1 }
+    end
+
     @title_header = "hilite" if params["sort"] == "title"
     @release_date_header = "hilite" if params["sort"] == "release_date"
+    
+    if session[:rating]
+      quer = Movie.query(session[:rating])
+      @movies = Movie.find(:all, :conditions => quer, order => params[:sort])
+    else
+      @movies = Movie.all(:order => params[:sort])
+    end
+    #@movies = Movie.where("rating = ?", params[:rating].keys)
+    #@movies = Movie.order(:title).where("rating = ?", params[:rating].keys) if params["sort"] == "title"
+    #@movies = Movie.order("release_date ASC").where("rating = ?", params[:rating].keys) if params["sort"] == "release_date"
   end
 
   def new
