@@ -8,33 +8,33 @@ class MoviesController < ApplicationController
   
   def index
     # redirect if needed
-    if (!params.key? :sort && session.key?(:sort)) || (!params.key? :rating && session.key?(:rating))
+    if (!params.key?(:sort) && session.key?(:sort)) || (!params.key?(:ratings) && session.key?(:ratings))
       flash.keep
-      redirect_to :action => 'index', :sort => params.key?(:sort) ? params[:sort] : session[:sort], :rating => params.key?(:rating) ? params[:rating] : session[:rating]
+      redirect_to :action => 'index', :sort => params.key?(:sort) ? params[:sort] : session[:sort], :ratings => params.key?(:ratings) ? params[:ratings] : session[:ratings]
     end
 
     # update session
     session[:sort] = params.key?(:sort) ? params[:sort] : session[:sort]
-    session[:rating] = params.key?(:rating) ? params[:rating] : session[:rating]
+    session[:ratings] = params.key?(:ratings) ? params[:ratings] : session[:ratings]
 
-    if !session.key? :rating
+    if session[:ratings].nil?
       rat = Movie.ratings
-      session[:rating] = {}
-      rat.each { |s| session[:rating][s] = 1 }
+      session[:ratings] = {}
+      rat.each { |s| session[:ratings][s] = 1 }
     end
 
     @title_header = "hilite" if params["sort"] == "title"
     @release_date_header = "hilite" if params["sort"] == "release_date"
     
-    if session[:rating]
-      quer = Movie.query(session[:rating])
-      @movies = Movie.find(:all, :conditions => quer, order => params[:sort])
+    if session[:ratings]
+      quer = Movie.query(session[:ratings])
+      @movies = Movie.order(params[:sort].to_s).where(quer)
     else
       @movies = Movie.all(:order => params[:sort])
     end
-    #@movies = Movie.where("rating = ?", params[:rating].keys)
-    #@movies = Movie.order(:title).where("rating = ?", params[:rating].keys) if params["sort"] == "title"
-    #@movies = Movie.order("release_date ASC").where("rating = ?", params[:rating].keys) if params["sort"] == "release_date"
+    #@movies = Movie.where("rating = ?", params[:ratings].keys)
+    #@movies = Movie.order(:title).where("rating = ?", params[:ratings].keys) if params["sort"] == "title"
+    #@movies = Movie.order("release_date ASC").where("rating = ?", params[:ratings].keys) if params["sort"] == "release_date"
   end
 
   def new

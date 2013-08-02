@@ -5,7 +5,7 @@
   - @all_ratings = Movie.ratings  
   - @all_ratings.each do |rating|
     = rating
-    = check_box_tag "ratings[#{rating}]", 1, checked = session[:rating][rating], :id => "ratings_#{rating}"  
+    = check_box_tag "ratings[#{rating}]", 1, checked = session[:ratings][rating], :id => "ratings_#{rating}"  
   = submit_tag 'Refresh', :id => "ratings_submit    "
 %table#movies
   %thead
@@ -19,6 +19,7 @@
   %tbody
     - @movies.each do |movie|
       %tr
+
         %td= movie.title 
         %td= movie.rating
         %td= movie.release_date

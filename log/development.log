@@ -4388,3 +4388,738 @@ The error occurred while evaluating nil.[]):
 Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.1ms)
 Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
 Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:48:06 -0500
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT rating FROM "movies" [0m
+Completed 500 Internal Server Error in 20ms
+
+NoMethodError (undefined method `compact!' for {"G"=>1, "R"=>1, "PG-13"=>1, "PG"=>1}:Hash):
+  app/models/movie.rb:8:in `query'
+  app/controllers/movies_controller.rb:30:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:48:42 -0500
+  Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT rating FROM "movies" 
+Completed 500 Internal Server Error in 48ms
+
+NameError (undefined local variable or method `order' for #<MoviesController:0xa133e7c>):
+  app/controllers/movies_controller.rb:31:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:49:47 -0500
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating 'G' orrating 'R' orrating 'PG-13' orrating 'PG' or)
+SQLite3::SQLException: near "'G'": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating 'G' orrating 'R' orrating 'PG-13' orrating 'PG' or)
+Completed 500 Internal Server Error in 19ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "'G'": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating 'G' orrating 'R' orrating 'PG-13' orrating 'PG' or)):
+  app/controllers/movies_controller.rb:31:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:50:48 -0500
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (6.8ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating 'G' orrating 'R' orrating 'PG-13' orrating 'PG' or)
+SQLite3::SQLException: near "'G'": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating 'G' orrating 'R' orrating 'PG-13' orrating 'PG' or)
+Completed 500 Internal Server Error in 26ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "'G'": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating 'G' orrating 'R' orrating 'PG-13' orrating 'PG' or)):
+  app/controllers/movies_controller.rb:31:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:51:05 -0500
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating 'G' or rating 'R' or rating 'PG-13' or rating 'PG')
+SQLite3::SQLException: near "'G'": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating 'G' or rating 'R' or rating 'PG-13' or rating 'PG')
+Completed 500 Internal Server Error in 20ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "'G'": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating 'G' or rating 'R' or rating 'PG-13' or rating 'PG')):
+  app/controllers/movies_controller.rb:31:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:51:33 -0500
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating G or rating R or rating PG-13 or rating PG)
+SQLite3::SQLException: near "G": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating G or rating R or rating PG-13 or rating PG)
+Completed 500 Internal Server Error in 20ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "G": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating G or rating R or rating PG-13 or rating PG)):
+  app/controllers/movies_controller.rb:31:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:51:35 -0500
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating G or rating R or rating PG-13 or rating PG)
+SQLite3::SQLException: near "G": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating G or rating R or rating PG-13 or rating PG)
+Completed 500 Internal Server Error in 22ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "G": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating G or rating R or rating PG-13 or rating PG)):
+  app/controllers/movies_controller.rb:31:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:51:38 -0500
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating G or rating R or rating PG-13 or rating PG)
+SQLite3::SQLException: near "G": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating G or rating R or rating PG-13 or rating PG)
+Completed 500 Internal Server Error in 18ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "G": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating G or rating R or rating PG-13 or rating PG)):
+  app/controllers/movies_controller.rb:31:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:51:40 -0500
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating G or rating R or rating PG-13 or rating PG)
+SQLite3::SQLException: near "G": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating G or rating R or rating PG-13 or rating PG)
+Completed 500 Internal Server Error in 17ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "G": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating G or rating R or rating PG-13 or rating PG)):
+  app/controllers/movies_controller.rb:31:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.3ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:55:46 -0500
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating 'G' or rating 'R' or rating 'PG-13' or rating 'PG')
+SQLite3::SQLException: near "'G'": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating 'G' or rating 'R' or rating 'PG-13' or rating 'PG')
+Completed 500 Internal Server Error in 24ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "'G'": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating 'G' or rating 'R' or rating 'PG-13' or rating 'PG')):
+  app/controllers/movies_controller.rb:31:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:56:07 -0500
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating G or rating R or rating PG-13 or rating PG)
+SQLite3::SQLException: near "G": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating G or rating R or rating PG-13 or rating PG)
+Completed 500 Internal Server Error in 19ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "G": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating G or rating R or rating PG-13 or rating PG)):
+  app/controllers/movies_controller.rb:31:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.4ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 18:56:24 -0500
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating 'G' or rating 'R' or rating 'PG-13' or rating 'PG')
+SQLite3::SQLException: near "'G'": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating 'G' or rating 'R' or rating 'PG-13' or rating 'PG')
+Completed 500 Internal Server Error in 77ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "'G'": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating 'G' or rating 'R' or rating 'PG-13' or rating 'PG')):
+  app/controllers/movies_controller.rb:31:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 19:42:46 -0500
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating "G" or rating "R" or rating "PG-13" or rating "PG")
+SQLite3::SQLException: near ""G"": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating "G" or rating "R" or rating "PG-13" or rating "PG")
+Completed 500 Internal Server Error in 23ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near ""G"": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating "G" or rating "R" or rating "PG-13" or rating "PG")):
+  app/controllers/movies_controller.rb:31:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (65.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 19:47:06 -0500
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (10.0ms)[0m  [1mSELECT rating FROM "movies" [0m
+Completed 500 Internal Server Error in 65ms
+
+NoMethodError (undefined method `keys' for nil:NilClass):
+  app/controllers/movies_controller.rb:31:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 19:47:09 -0500
+  Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.5ms)[0m  SELECT rating FROM "movies" 
+Completed 500 Internal Server Error in 107ms
+
+NoMethodError (undefined method `keys' for nil:NilClass):
+  app/controllers/movies_controller.rb:31:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (14.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (31.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (53.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 19:47:10 -0500
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT rating FROM "movies" [0m
+Completed 500 Internal Server Error in 15ms
+
+NoMethodError (undefined method `keys' for nil:NilClass):
+  app/controllers/movies_controller.rb:31:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 19:50:55 -0500
+  Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT ratings FROM "movies" 
+SQLite3::SQLException: no such column: ratings: SELECT ratings FROM "movies" 
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: ratings: SELECT ratings FROM "movies" ):
+  app/models/movie.rb:3:in `ratings'
+  app/controllers/movies_controller.rb:21:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.7ms)
+
+
+Started GET "/movies?sort=title" for 127.0.0.1 at 2013-08-01 19:51:22 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT ratings FROM "movies" [0m
+SQLite3::SQLException: no such column: ratings: SELECT ratings FROM "movies" 
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: ratings: SELECT ratings FROM "movies" ):
+  app/models/movie.rb:3:in `ratings'
+  app/controllers/movies_controller.rb:21:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 19:54:00 -0500
+  Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.5ms)[0m  SELECT ratings FROM "movies" 
+SQLite3::SQLException: no such column: ratings: SELECT ratings FROM "movies" 
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: ratings: SELECT ratings FROM "movies" ):
+  app/models/movie.rb:3:in `ratings'
+  app/controllers/movies_controller.rb:21:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 19:58:19 -0500
+  Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT rating FROM "movies" [0m
+Completed 500 Internal Server Error in 20ms
+
+NoMethodError (undefined method `keys' for nil:NilClass):
+  app/controllers/movies_controller.rb:31:in `index'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-01 20:04:26 -0500
+  Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT rating FROM "movies" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (15.6ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating = 'G','R','PG-13','PG')
+SQLite3::SQLException: near ",": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating = 'G','R','PG-13','PG')
+Rendered movies/index.html.haml within layouts/application (483.4ms)
+Completed 500 Internal Server Error in 808ms
+
+ActionView::Template::Error (SQLite3::SQLException: near ",": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating = 'G','R','PG-13','PG')):
+    17:         = link_to "Release Date", movies_path(:sort => :release_date), {:id => :release_date_header}
+    18:       %th More Info
+    19:   %tbody
+    20:     - @movies.each do |movie|
+    21:       %tr
+    22: 
+    23:         %td= movie.title 
+  app/views/movies/index.html.haml:20:in `_app_views_movies_index_html_haml__144422446__645055438'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (34.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (20.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (118.6ms)
+
+
+Started GET "/movies?sort=title" for 127.0.0.1 at 2013-08-01 20:23:42 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT rating FROM "movies" 
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (rating "G" or rating "R" or rating "PG-13" or rating "PG") ORDER BY title[0m
+SQLite3::SQLException: near ""G"": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating "G" or rating "R" or rating "PG-13" or rating "PG") ORDER BY title
+Rendered movies/index.html.haml within layouts/application (242.4ms)
+Completed 500 Internal Server Error in 545ms
+
+ActionView::Template::Error (SQLite3::SQLException: near ""G"": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating "G" or rating "R" or rating "PG-13" or rating "PG") ORDER BY title):
+    17:         = link_to "Release Date", movies_path(:sort => :release_date), {:id => :release_date_header}
+    18:       %th More Info
+    19:   %tbody
+    20:     - @movies.each do |movie|
+    21:       %tr
+    22: 
+    23:         %td= movie.title 
+  app/views/movies/index.html.haml:20:in `_app_views_movies_index_html_haml__144422446__645055438'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (20.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (503.7ms)
+
+
+Started GET "/movies?sort=title" for 127.0.0.1 at 2013-08-01 20:34:23 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT rating FROM "movies" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating "G" or rating "R" or rating "PG-13" or rating "PG") ORDER BY ASC
+SQLite3::SQLException: near ""G"": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating "G" or rating "R" or rating "PG-13" or rating "PG") ORDER BY ASC
+Rendered movies/index.html.haml within layouts/application (1407.0ms)
+Completed 500 Internal Server Error in 2779ms
+
+ActionView::Template::Error (SQLite3::SQLException: near ""G"": syntax error: SELECT "movies".* FROM "movies"  WHERE (rating "G" or rating "R" or rating "PG-13" or rating "PG") ORDER BY ASC):
+    17:         = link_to "Release Date", movies_path(:sort => :release_date), {:id => :release_date_header}
+    18:       %th More Info
+    19:   %tbody
+    20:     - @movies.each do |movie|
+    21:       %tr
+    22: 
+    23:         %td= movie.title 
+  app/views/movies/index.html.haml:20:in `_app_views_movies_index_html_haml__144422446__645055438'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (17.4ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (26.4ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (76.6ms)
+
+
+Started GET "/movies?sort=title" for 127.0.0.1 at 2013-08-01 21:07:45 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT rating FROM "movies" 
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (rating = "G" or rating = "R" or rating = "PG-13" or rating = "PG") ORDER BY ASC[0m
+SQLite3::SQLException: no such column: ASC: SELECT "movies".* FROM "movies"  WHERE (rating = "G" or rating = "R" or rating = "PG-13" or rating = "PG") ORDER BY ASC
+Rendered movies/index.html.haml within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 12001ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: ASC: SELECT "movies".* FROM "movies"  WHERE (rating = "G" or rating = "R" or rating = "PG-13" or rating = "PG") ORDER BY ASC):
+    17:         = link_to "Release Date", movies_path(:sort => :release_date), {:id => :release_date_header}
+    18:       %th More Info
+    19:   %tbody
+    20:     - @movies.each do |movie|
+    21:       %tr
+    22: 
+    23:         %td= movie.title 
+  app/views/movies/index.html.haml:20:in `_app_views_movies_index_html_haml__144422446__645055438'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (29.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (32.4ms)
+
+
+Started GET "/movies?sort=title&Q=1" for 127.0.0.1 at 2013-08-01 21:12:50 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title", "Q"=>"1"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT rating FROM "movies" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating = "G" or rating = "R" or rating = "PG-13" or rating = "PG") ORDER BY title
+Rendered movies/index.html.haml within layouts/application (2820.2ms)
+Completed 200 OK in 3566ms (Views: 3559.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-01 21:12:54 -0500
+Served asset /application.css - 200 OK (317ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-01 21:12:54 -0500
+Served asset /application.js - 200 OK (45ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-01 21:12:59 -0500
+Served asset /jquery_ujs.js - 200 OK (191ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-01 21:12:59 -0500
+Served asset /jquery.js - 200 OK (7339ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BR%5D=1&ratings%5BPG-13%5D=1&ratings%5BPG%5D=1&commit=Refresh" for 127.0.0.1 at 2013-08-01 21:13:17 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "R"=>"1", "PG-13"=>"1", "PG"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 1ms
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2013-08-01 21:13:18 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating = "G" or rating = "PG" or rating = "PG-13" or rating = "R") ORDER BY title
+Rendered movies/index.html.haml within layouts/application (886.7ms)
+Completed 200 OK in 965ms (Views: 935.2ms | ActiveRecord: 29.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-01 21:13:19 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-01 21:13:20 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-01 21:13:20 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-01 21:13:20 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&commit=Refresh" for 127.0.0.1 at 2013-08-01 21:13:27 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&sort=title
+Completed 302 Found in 32ms
+
+
+Started GET "/movies?ratings%5BG%5D=1&sort=title" for 127.0.0.1 at 2013-08-01 21:13:27 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating = "G") ORDER BY title
+Rendered movies/index.html.haml within layouts/application (9.7ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-01 21:13:28 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-01 21:13:28 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-01 21:13:28 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-01 21:13:28 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2013-08-01 21:13:31 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 1ms
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2013-08-01 21:13:31 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating = "G" or rating = "R") ORDER BY title
+Rendered movies/index.html.haml within layouts/application (11.0ms)
+Completed 200 OK in 71ms (Views: 70.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-01 21:13:31 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-01 21:13:31 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-01 21:13:31 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-01 21:13:31 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies?sort=release_date" for 127.0.0.1 at 2013-08-01 21:13:44 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"release_date"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 1ms
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2013-08-01 21:13:44 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating = "G" or rating = "R") ORDER BY release_date
+Rendered movies/index.html.haml within layouts/application (49.7ms)
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-01 21:13:44 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-01 21:13:44 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-01 21:13:44 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-01 21:13:44 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BR%5D=1&ratings%5BPG-13%5D=1&commit=Refresh" for 127.0.0.1 at 2013-08-01 21:14:08 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "R"=>"1", "PG-13"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 1ms
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2013-08-01 21:14:08 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating = "G" or rating = "PG-13" or rating = "R") ORDER BY release_date
+Rendered movies/index.html.haml within layouts/application (242.3ms)
+Completed 200 OK in 248ms (Views: 246.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-01 21:14:08 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-01 21:14:08 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-01 21:14:08 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-01 21:14:08 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2013-08-01 21:14:14 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 1ms
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2013-08-01 21:14:14 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating = "G" or rating = "R") ORDER BY release_date
+Rendered movies/index.html.haml within layouts/application (20.3ms)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-01 21:14:14 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-01 21:14:14 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-01 21:14:14 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-01 21:14:14 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BR%5D=1&ratings%5BPG%5D=1&commit=Refresh" for 127.0.0.1 at 2013-08-01 21:14:15 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "R"=>"1", "PG"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 2ms
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2013-08-01 21:14:15 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating = "G" or rating = "PG" or rating = "R") ORDER BY release_date
+Rendered movies/index.html.haml within layouts/application (12.2ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-01 21:14:15 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-01 21:14:15 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-01 21:14:15 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-01 21:14:15 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies?sort=title" for 127.0.0.1 at 2013-08-01 21:14:16 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 1ms
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2013-08-01 21:14:16 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (1.1ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating = "G" or rating = "PG" or rating = "R") ORDER BY title
+Rendered movies/index.html.haml within layouts/application (17.1ms)
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-01 21:14:17 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-01 21:14:17 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-01 21:14:17 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-01 21:14:17 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/movies?sort=release_date" for 127.0.0.1 at 2013-08-01 21:14:19 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"release_date"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 1ms
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2013-08-01 21:14:19 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating = "G" or rating = "PG" or rating = "R") ORDER BY release_date
+Rendered movies/index.html.haml within layouts/application (16.8ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-01 21:14:19 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-01 21:14:19 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-01 21:14:19 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-01 21:14:19 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BR%5D=1&ratings%5BPG-13%5D=1&ratings%5BPG%5D=1&commit=Refresh" for 127.0.0.1 at 2013-08-01 21:14:21 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "R"=>"1", "PG-13"=>"1", "PG"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 1ms
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2013-08-01 21:14:21 -0500
+  Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT rating FROM "movies" [0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE (rating = "G" or rating = "PG" or rating = "PG-13" or rating = "R") ORDER BY release_date
+Rendered movies/index.html.haml within layouts/application (173.7ms)
+Completed 200 OK in 180ms (Views: 178.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-01 21:14:22 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-01 21:14:22 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-01 21:14:22 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-01 21:14:22 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
