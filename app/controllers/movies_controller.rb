@@ -7,8 +7,11 @@ class MoviesController < ApplicationController
   end
   
   def index
+    #debugger
+    #logger.info("Session start:" + session.inspect)
     # redirect if needed
     if (!params.key?(:sort) && session.key?(:sort)) || (!params.key?(:ratings) && session.key?(:ratings))
+      #logger.info("Hiiiiiiiiiiiiiiiiiiii!!!!!!!!!!")
       flash.keep
       redirect_to :action => 'index', :sort => params.key?(:sort) ? params[:sort] : session[:sort], :ratings => params.key?(:ratings) ? params[:ratings] : session[:ratings]
     end
@@ -21,6 +24,7 @@ class MoviesController < ApplicationController
       rat = Movie.ratings
       session[:ratings] = {}
       rat.each { |s| session[:ratings][s] = 1 }
+      #debugger
     end
 
     @title_header = "hilite" if params["sort"] == "title"
@@ -35,6 +39,7 @@ class MoviesController < ApplicationController
     #@movies = Movie.where("rating = ?", params[:ratings].keys)
     #@movies = Movie.order(:title).where("rating = ?", params[:ratings].keys) if params["sort"] == "title"
     #@movies = Movie.order("release_date ASC").where("rating = ?", params[:ratings].keys) if params["sort"] == "release_date"
+    #debugger
   end
 
   def new
